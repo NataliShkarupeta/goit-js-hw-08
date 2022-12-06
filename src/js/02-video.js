@@ -13,19 +13,7 @@ function onPlay (data) {
 };
 
    
-player.setCurrentTime(JSON.parse(localStorage.getItem(STORAGE_VIMEO_KEY)).seconds)
-.then(function(seconds) {
-   
-}).catch(function(error) {
-   switch (error.name) {
-       case 'RangeError':
-           // the time was less than 0 or greater than the video’s duration
-           break;
+player.setCurrentTime(JSON.parse(localStorage.getItem(STORAGE_VIMEO_KEY) || "0"))
 
-       default:
-           // some other error occurred
-           break;
-   }
-});
 
 player.on('timeupdate',throttle(onPlay, 1000))
