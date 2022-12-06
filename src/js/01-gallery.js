@@ -20,4 +20,4 @@ const addElHtml = galleryItems.map(makeEl).join('');
 parentContEl.insertAdjacentHTML('afterbegin',addElHtml);
 
 new SimpleLightbox('.gallery a',{captionsData:"alt",captionPosition:'bottom', captionDelay:250});
-console.log(addElHtml)
+
